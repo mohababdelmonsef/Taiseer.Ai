@@ -1,17 +1,10 @@
 from PIL import Image
 import requests
 import streamlit as st
-from streamlit_lottie import st_lottie
 
 st.set_page_config(page_title="taiseer.Ai" , page_icon=":tada:", layout="wide")
 
-def load_lottieurl(url1):
-    r = requests.get(url1)
-    if r.status_code !=200:
-        return None
-    return  r.json()
 #---- LOAD ASSETS ----
-#lottie_coding = load_lottieurl("https://lottiefiles.com/free-animation/coding-line-4xkhlrq99j")
 img_contact_form1 = Image.open("images/hello_world.png")
 img_contact_form2 = Image.open("images/i_touch_grass.jpg")
 img_contact_form3 = Image.open("images/rock_and_roll.png")
