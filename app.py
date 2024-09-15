@@ -1,12 +1,11 @@
 from PIL import Image
 import requests
 import streamlit as st
-import os
 
 st.set_page_config(page_title="taiseer.Ai" , page_icon=":tada:", layout="wide")
 
 #---- LOAD ASSETS ----
-img_contact_form1 = Image.open(os.path.join(os.getcwd(), "images/hello_world.png"))
+img_contact_form1 = Image.open("images/world.png")
 img_contact_form2 = Image.open("images/i_touch_grass.jpg")
 img_contact_form3 = Image.open("images/rock_and_roll.png")
 #----- HEADER SECTION -----
