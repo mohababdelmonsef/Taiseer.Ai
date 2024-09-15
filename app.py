@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="taiseer.Ai" , page_icon=":tada:", layout="wide")
 
 #---- LOAD ASSETS ----
-img_contact_form1 = Image.open("images/world.png")
+img_contact_form1 = Image.open("images/shehata.png")
 img_contact_form2 = Image.open("images/i_touch_grass.jpg")
 img_contact_form3 = Image.open("images/rock_and_roll.png")
 #----- HEADER SECTION -----
@@ -68,5 +68,5 @@ with st.container():
     left_column, right_column = st.columns(2)
     with left_column:
         st.markdown(contact_form, unsafe_allow_html=True)
-        with right_column:
-            st.empty()
+    with right_column:
+        st.write("this website was made by krafs")
