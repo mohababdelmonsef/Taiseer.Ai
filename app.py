@@ -1,59 +1,68 @@
 from PIL import Image
-import requests
+import os
 import streamlit as st
 
-st.set_page_config(page_title="taiseer.Ai" , page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="taiseer.Ai", page_icon=":tada:", layout="wide")
 
-#---- LOAD ASSETS ----
-img_contact_form1 = Image.open("images/shehata.png")
-img_contact_form2 = Image.open("images/i_touch_grass.jpg")
-img_contact_form3 = Image.open("images/rock_and_roll.png")
-#----- HEADER SECTION -----
+# ---- Function to Load Image ----
+def load_image(image_path):
+    try:
+        return Image.open(image_path)
+    except FileNotFoundError:
+        st.warning(f"File not found: {image_path}")
+        return None
+
+# ---- Load Images ----
+img_contact_form1 = load_image("images/shehata.png")
+img_contact_form2 = load_image("images/i_touch_grass.jpg")
+img_contact_form3 = load_image("images/rock_and_roll.png")
+
+# ----- HEADER SECTION -----
 with st.container():
-    st.subheader("Hi im taiseer ur fav not working Ai :wave:")
-    st.title("my music taste is OLD")
-    st.write("i was made to not compete with chatgpt")
+    st.subheader("Hi I'm taiseer, your fav not working Ai :wave:")
+    st.title("My music taste is OLD")
+    st.write("I was made to not compete with chatgpt")
     st.write("[learn more >](https://istodaytietuesday.com/)")
-#---- WHAT I DO ----
+
+# ---- WHAT I DO ----
 with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
-        st.header("what i do")
+        st.header("What I Do")
         st.write("##")
-        st.write(
-                 """
-                 - nothing
-                 """)
+        st.write("- Nothing")
     with right_column:
         st.write("##")
-        st.write("""              
-                                            your maw
-                  """)
+        st.write("Your maw")
+
+# ---- SHOW IMAGES ----
 with st.container():
     st.write("---")
-    st.header("your 1 and only AI")
+    st.header("Your 1 and Only AI")
     st.write("##")
-    image_column, text_column = st.columns((1,2))
+    image_column, text_column = st.columns((1, 2))
     with image_column:
-        st.image(img_contact_form3)
+        if img_contact_form3:
+            st.image(img_contact_form3)
     with text_column:
-        st.subheader("check dis out")
-        st.write("""
-        me playing
-        """
-                 )
-        st.markdown("[watch video...](https://www.instagram.com/p/C-hw6hzgL8ViAvF21nrJoTEoH5RZsEEjaZtK4s0/)")
+        st.subheader("Check This Out")
+        st.write("Me playing")
+        st.markdown("[Watch video...](https://www.instagram.com/p/C-hw6hzgL8ViAvF21nrJoTEoH5RZsEEjaZtK4s0/)")
+
 with st.container():
-    image_column1, image_column2 = st.columns((1,1))
+    image_column1, image_column2 = st.columns((1, 1))
     with image_column1:
-        st.image(img_contact_form1)
+        if img_contact_form1:
+            st.image(img_contact_form1)
     with image_column2:
-        st.image(img_contact_form2)
-#---- CONTACT ----
+        if img_contact_form2:
+            st.image(img_contact_form2)
+
+# ---- CONTACT FORM ----
 with st.container():
     st.write("---")
-    st.header("get in touch with me!")
+    st.header("Get in touch with me!")
     st.write("##")
     contact_form = """
     <form action="https://www.linkedin.com/in/ahmed-taiseer-00a01a228?trk=contact-info" method="POST">
@@ -64,9 +73,8 @@ with st.container():
      <button type="submit">Send</button>
 </form> 
 """
-
     left_column, right_column = st.columns(2)
     with left_column:
         st.markdown(contact_form, unsafe_allow_html=True)
     with right_column:
-        st.write("this website was made by krafs")
+        st.write("This website was made by Krafs")
