@@ -1,5 +1,4 @@
 from PIL import Image
-import os
 import streamlit as st
 
 st.set_page_config(page_title="taiseer.Ai", page_icon=":tada:", layout="wide")
@@ -13,7 +12,7 @@ def load_image(image_path):
         return None
 
 # ---- Load Images ----
-img_contact_form1 = load_image("images/shehata.png")
+img_contact_form1 = load_image("images/alive.png")
 img_contact_form2 = load_image("images/i_touch_grass.jpg")
 img_contact_form3 = load_image("images/rock_and_roll.png")
 
@@ -65,7 +64,7 @@ with st.container():
     st.header("Get in touch with me!")
     st.write("##")
     contact_form = """
-    <form action="https://www.linkedin.com/in/ahmed-taiseer-00a01a228?trk=contact-info" method="POST">
+    <form action="ahmed.theeditor@gmail.com" method="POST">
      <input type="hidden" name="_captcha" value="false">
      <input type="text" name="name" placeholder="your name" required>
      <input type="email" name="email" placeholder="your email" required>
